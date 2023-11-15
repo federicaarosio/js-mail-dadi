@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Recursive', sans-serif;
+    font-size: 3rem;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    background-color: #f4bd34;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    color: #403276;
+}
+
+.margin-bottom {
+    margin-bottom: 1rem;
+}
+
+input {
+    font-size: 1rem;
+}
+
+button {
+    background-color: #403276;
+    color: #f4bd34;
+    border-radius: 10px;
+    width: 100px;
+    padding: .5rem;
+    text-align: center;
+    font-family: inherit;
+    text-transform: uppercase;
+}

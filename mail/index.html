@@ -4,19 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mail</title>
+
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <main>
         <!-- Mail request -->
-        <div>
-            <label for="email-input">Type your email</label>
-            <input type="mail" id="email-input">
+        <div class="container">
+            <label for="email-input" class="margin-bottom">Type your email: </label>
+            <input type="mail" id="email-input" class="margin-bottom">
             <button>Submit</button>
+            <!-- Result Output -->
+            <div class="wrapper"></div>
         </div>
     
-        <!-- Result Output -->
-        <div class="wrapper"></div>
     </main>
 
     <!-- Javascript     -->
