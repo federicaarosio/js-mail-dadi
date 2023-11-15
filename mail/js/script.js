@@ -16,19 +16,48 @@
             //allora l'utente non può accedere > stampo esito negativo (sia console sia pagina)
 
 
+// ALTENATIVA CON IL PROMPT
+
+// let emailList = ["luca@mail.com", "elena@mail.com", "marta@mail.com", "matteo@mail.com"];
+// console.log(emailList);
+
+// const userEmail = prompt("Type your email");
+
+// const wrapperElement = document.querySelector("div.wrapper");
+// const resultOutput = document.createElement("p");
+// wrapperElement.appendChild(resultOutput);
+
+// if (emailList.includes(userEmail)) {
+//     console.log("you're in the list");
+//     resultOutput.innerHTML = ("you're in the list");
+// } else {
+//     console.log("you're not subscribed");
+//     resultOutput.innerHTML = ("you're not subscribed");
+// }
+
+
+// ALTERNATIVA CON INPUT
+
 let emailList = ["luca@mail.com", "elena@mail.com", "marta@mail.com", "matteo@mail.com"];
 console.log(emailList);
 
-const userEmail = prompt("Type your email");
 
-const wrapperElement = document.querySelector("div.wrapper");
-const resultOutput = document.createElement("p");
-wrapperElement.appendChild(resultOutput);
+const submitEmail = document.querySelector("button");
 
-if (emailList.includes(userEmail)) {
-    console.log("you're in the list");
-    resultOutput.innerHTML = ("you're in the list");
-} else {
-    console.log("you're not subscribed");
-    resultOutput.innerHTML = ("you're not subscribed");
-}
+submitEmail.addEventListener("click", function() {
+    const userEmail = document.getElementById("email-input").value;
+    
+    const wrapperElement = document.querySelector("div.wrapper");
+    const resultOutput = document.createElement("p");
+    wrapperElement.appendChild(resultOutput);
+    
+    if (emailList.includes(userEmail)) {
+        console.log("you're in the list");
+        resultOutput.innerHTML = ("you're in the list");
+    } else {
+        console.log("you're not subscribed");
+        resultOutput.innerHTML = ("you're not subscribed");
+    }
+
+})
+
