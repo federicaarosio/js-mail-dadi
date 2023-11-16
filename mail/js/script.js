@@ -11,53 +11,41 @@
 //Confronto la lista con l'email inserita
     //SE
         //l'email inserita è nella mia lista
-            //allora l'utente può accedere > stampo esito positivo (sia console sia pagina)
+            //allora l'utente può accedere > stampo esito positivo 
         //l'email inserita non è nella mia lista
-            //allora l'utente non può accedere > stampo esito negativo (sia console sia pagina)
+            //allora l'utente non può accedere > stampo esito negativo
 
-
-// ALTENATIVA CON IL PROMPT
-
-// let emailList = ["luca@mail.com", "elena@mail.com", "marta@mail.com", "matteo@mail.com"];
-// console.log(emailList);
-
-// const userEmail = prompt("Type your email");
-
-// const wrapperElement = document.querySelector("div.wrapper");
-// const resultOutput = document.createElement("p");
-// wrapperElement.appendChild(resultOutput);
-
-// if (emailList.includes(userEmail)) {
-//     console.log("you're in the list");
-//     resultOutput.innerHTML = ("you're in the list");
-// } else {
-//     console.log("you're not subscribed");
-//     resultOutput.innerHTML = ("you're not subscribed");
-// }
-
-
-// ALTERNATIVA CON INPUT
 
 let emailList = ["luca@mail.com", "elena@mail.com", "marta@mail.com", "matteo@mail.com"];
 console.log(emailList);
 
-
 const submitEmail = document.querySelector("button");
 
 submitEmail.addEventListener("click", function() {
+
+    let isUserOnList = false;
+
     const userEmail = document.getElementById("email-input").value;
-    
     const wrapperElement = document.querySelector("div.wrapper");
     const resultOutput = document.createElement("p");
     wrapperElement.appendChild(resultOutput);
-    
-    if (emailList.includes(userEmail)) {
-        console.log("you're in the list");
-        resultOutput.innerHTML = ("you're in the list");
-    } else {
-        console.log("you're not subscribed");
-        resultOutput.innerHTML = ("you're not subscribed");
+
+
+    for(i = 0 ; i < emailList.length ; i++) {
+        const currentEmail = emailList[i];
+
+        if (userEmail == currentEmail) {
+            isUserOnList = true;
+        }
     }
 
-})
+    console.log(isUserOnList);
 
+    if (isUserOnList) {
+        console.log("Sei nella lista")
+        resultOutput.innerHTML = ("Sei nella lista!")
+    } else {
+        console.log("Non sei nella lista")
+        resultOutput.innerHTML = ("Non sei nella lista!")
+    }
+})
